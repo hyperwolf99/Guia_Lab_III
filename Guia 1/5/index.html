@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5</title>
+</head>
+
+<body>
+    <div id="container">
+        <label for="texto">Seleccione el color del texto:</label>
+        <select id="texto">
+            <option value="black">Negro</option>
+            <option value="blue">Azul</option>
+            <option value="green">Verde</option>
+            <option value="red">Rojo</option>
+        </select><br>
+        <label for="fondo">Seleccione el color del fondo:</label>
+        <select id="fondo">
+            <option value="white">Blanco</option>
+            <option value="grey">Gris</option>
+            <option value="brown">Marron</option>
+            <option value="orange">Naranja</option>
+        </select><br>
+        <p id="parrafo">Texto</p>
+    </div>
+
+    <script>
+        const colorTexto = $("texto")
+        const parrafo = $("parrafo")
+        const colorFondo = $("fondo")
+
+        colorTexto.onchange = () => { parrafo.style.color = colorTexto.value }
+        colorFondo.onchange = () => { parrafo.style.backgroundColor = colorFondo.value }
+
+        //Simplificacion para el uso de getElementById
+        function $(elemento) {
+            return document.getElementById(elemento)
+        }
+    </script>
+</body>
+
+</html>

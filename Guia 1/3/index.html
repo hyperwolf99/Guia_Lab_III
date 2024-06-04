@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+</head>
+
+<body>
+    <p id="asd">texto</p>
+    <input type="text" id="input">
+
+    <script>
+        var input = document.getElementById("input")
+        var parrafo = document.getElementById("asd")
+
+        //Tambien se puede utilizar .onchange pero habria que apretar ENTER
+        input.oninput = () => {
+            parrafo.innerText = input.value
+        }
+
+    //Con atributo y funcion anonima
+        // input.oninput = function () {
+        //     parrafo.innerText = this.value
+        // }
+    </script>
+</body>
+
+</html>

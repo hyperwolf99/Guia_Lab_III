@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10</title>
+</head>
+
+<body>
+    <form id="formulario">
+        <label for="nombre">Nombre:</label>
+        <input id="nombre" type="text" placeholder="Introduce tu nombre" required>
+        <label for="apellido">Apellido:</label>
+        <input id="apellido" type="text" placeholder="Introduce tu apellido" required>
+        <label for="edad">Edad:</label>
+        <input id="edad" type="number" min="18" placeholder="Mayor a 18" required>
+        <button type="submit">Enviar</button>
+    </form>
+    <p id="asd"></p>
+
+    <script>
+        const nombre = $("nombre")
+        const apellido = $("apellido")
+        const edad = $("edad")
+        const formulario = $("formulario")
+        const asd = $("asd")
+
+        formulario.onsubmit = (e) => {
+            asd.style.color = "green"
+            asd.innerText = "Datos correctos."
+            e.preventDefault()
+        }
+
+        function $(elemento) {
+            return document.getElementById(elemento)
+        }
+    </script>
+</body>
+
+</html>

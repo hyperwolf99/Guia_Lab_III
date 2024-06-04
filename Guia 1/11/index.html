@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11</title>
+</head>
+
+<body>
+    <h1>Listado de personas</h1>
+    <button id="mostrar">Mostrar personas</button>
+    <ul id="personas">
+    </ul>
+
+    <script>
+        const listado = $("personas")
+        const mostrar = $("mostrar")
+
+        //Espera el evento "click"
+        mostrar.addEventListener("click", async () => {
+            //Espera una respuesta de la URL
+            const res = await fetch("https://jsonplaceholder.typicode.com/users")
+            //Verifica el estado de la URL
+            if (res.ok) {
+                //Mete en una lista el JSON con todos los datos de los usuarios
+                const personas = await res.json()
+
+                //Recorre la lista
+                personas.map((persona) => {
+                    //Crea el elemento li
+                    const item = document.createElement("li")
+                    //Le asigna al elemento li los datos del usuario (ID, Nombre y el Email)
+                    item.textContent = `ID: ${persona.id}, Nombre: ${persona.name} - Email: ${persona.email}`
+                    //Lo agrega al listado ul
+                    listado.appendChild(item)
+                })
+            }
+
+        })
+
+        function $(elemento) {
+            return document.getElementById(elemento)
+        }
+    </script>
+</body>
+
+</html>

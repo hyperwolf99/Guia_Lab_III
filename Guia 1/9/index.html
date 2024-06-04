@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9</title>
+</head>
+
+<body>
+    <ul id="personas">
+    </ul>
+
+    <script>
+        const personas = [
+            {nombre: 'Joel', apellido:'Moyano',edad:25},
+            {nombre: 'Juan', apellido:'Mendez',edad:22},
+            {nombre: 'Mariano', apellido:'Ortega',edad:18},
+            {nombre: 'Lucas', apellido:'Falcon',edad:30}
+        ]
+        const listado = $("personas")
+
+        personas.map((persona)=>{
+            const item = document.createElement("li")
+            item.textContent = `Apellido: ${persona.apellido}, Nombre: ${persona.nombre}, Edad: ${persona.edad}`
+            listado.appendChild(item)
+        })
+
+        function $(elemento) {
+            return document.getElementById(elemento)
+        }
+    </script>
+</body>
+
+</html>

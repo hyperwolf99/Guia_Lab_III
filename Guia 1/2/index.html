@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+</head>
+
+<body>
+    <p id="asd">texto</p>
+    <input type="text" id="input">
+    <button onclick="cambiarTexto()" id="cambiar">Cambiar Mensaje</button>
+
+    <script>
+        const mensaje = document.getElementById("asd")
+        const nuevo = document.getElementById("input")
+        const cambiar = document.getElementById("cambiar")
+
+        //La vieja confiable
+        function cambiarTexto() {
+            document.getElementById("asd").innerText = nuevo.value
+        }
+
+        //Otra manera mas corta con atributo onclick
+        //cambiar.onclick = () => { mensaje.innerText = nuevo.value }
+
+        //Otra manera q no me gusta
+        //cambiar.addEventListener("click", ()=> (asd.innerText = nuevo.value))
+    </script>
+</body>
+
+</html>

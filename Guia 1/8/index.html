@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8</title>
+</head>
+
+<body>
+    <form id="formulario">
+        <label for="nombre">Nombre:</label>
+        <input id="nombre" type="text">
+        <button type="submit">Agregar nombre</button>
+    </form>
+
+    <ol id="personas">
+    </ol>
+    <script>
+        const nombre = $("nombre")
+        const formulario = $("formulario")
+        const listado = $("personas")
+
+        formulario.onsubmit = (e) => {
+            if (nombre.value != "") {
+                //Creamos li en la lista ul
+                const item = document.createElement("li")
+                //Creamos boton de quitar
+                const quitar = document.createElement("button")
+
+                //Le damos el texto X al boton de antes
+                quitar.textContent = "X"
+
+                //Le asignamos el texto del input al li
+                item.textContent = nombre.value
+
+                //Agregamos la etiqueta y el boton al listado
+                listado.appendChild(item)
+                listado.appendChild(quitar)
+
+                //Le asignamos funciones al boton de quitar
+                quitar.onclick = ()=>{
+                    quitar.remove()
+                    item.remove()
+                }
+                //Se vacia el input
+                nombre.value = ""
+            }
+            e.preventDefault()
+        }
+
+        function $(elemento) {
+            return document.getElementById(elemento)
+        }
+    </script>
+</body>
+
+</html>

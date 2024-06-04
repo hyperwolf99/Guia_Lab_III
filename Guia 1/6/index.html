@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <label for="direccion">Dirección:</label>
+    <select id="direccion" onchange="cambiarEstilo()">
+        <option value="row">Filas</option>
+        <option value="row-reverse">Filas opuestas</option>
+        <option value="column">Columnas</option>
+        <option value="column-reverse">Columnas opuestas</option>
+    </select>
+
+    <label for="justificado">Justificado:</label>
+    <select id="justificado" onchange="cambiarEstilo()">
+        <option value="flex-start">Inicio</option>
+        <option value="center">Centro</option>
+        <option value="flex-end">Final</option>
+        <option value="space-between">Espaciado</option>
+        <option value="space-around">Espaciado alrededor</option>
+        <option value="space-evenly">Espaciado equilibrado</option>
+    </select>
+
+    <label for="alineado">Alineado:</label>
+    <select id="alineado" onchange="cambiarEstilo()">
+        <option value="stretch">Estirado</option>
+        <option value="center">Centro</option>
+        <option value="flex-start">Arriba</option>
+        <option value="flex-end">Abajo</option>
+    </select>
+
+    <div id="contenedor">
+        <div class="caja1">1</div>
+        <div class="caja2">2</div>
+        <div class="caja3">3</div>
+    </div>
+
+    <script>
+        const direccion = $("direccion")
+        const justificado = $("justificado")
+        const alineado = $("alineado")
+        const contenedor = $("contenedor")
+        
+        direccion.onchange = ()=>{contenedor.style.flexDirection = direccion.value}
+        justificado.onchange = ()=>{contenedor.style.justifyContent = justificado.value}
+        alineado.onchange = ()=>{contenedor.style.alignItems = alineado.value}
+
+        //Simplificacion para el uso de getElementById
+        function $(elemento) {
+            return document.getElementById(elemento)
+        }
+    </script>
+</body>
+
+</html>
