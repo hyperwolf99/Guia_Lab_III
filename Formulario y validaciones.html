@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej6</title>
+</head>
+
+<body>
+    <form id="formulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" maxlength="50" placeholder="Introduce tu nombre"><br>
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" maxlength="50" placeholder="Introduce tu apellido"><br>
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" placeholder="Introduce tu edad"><br>
+        <label for="altura">Altura en cm:</label>
+        <input type="number" id="altura" name="altura" placeholder="Introduce tu altura en centimetros"><br>
+        <label for="correo">Correo Electronico:</label>
+        <input type="text" id="correo" name="correo" placeholder="Introduce tu correo electronico"><br>
+        <button type="submit">Enviar</button>
+        <p id="resultado"></p>
+    </form>
+
+    <script>
+        const formulario = $('formulario')
+        const resultado = $('resultado')
+
+        formulario.onsubmit = (e)=>{
+            let nombre = formulario['nombre'].value
+            let apellido = formulario['apellido'].value
+            let edad = formulario['edad'].value
+            let altura = formulario['altura'].value
+            let correo = formulario['correo'].value
+
+            if(nombre === ''){
+                resultado.innerText= "El nombre esta vacio"
+                resultado.style.color= 'red'
+            }else if (apellido === ''){
+                resultado.innerText= "El apellido esta vacio"
+                resultado.style.color= 'red'
+            }else if(edad === ''){
+                resultado.innerText= 'La edad esta vacia'
+                resultado.style.color= 'red'
+            }else if (edad < 0){
+                resultado.innerText= 'La edad no puede ser negativa'
+                resultado.style.color= 'red'
+            }else if (edad < 18){
+                resultado.innerText= 'Debe ser mayor de edad'
+                resultado.style.color= 'red'
+            }else if(altura === ''){
+                resultado.innerText= 'La altura esta vacia'
+                resultado.style.color= 'red'
+            }else if (altura < 0){
+                resultado.innerText= 'La altura no puede ser negativa'
+                resultado.style.color= 'red'
+            }else if (altura > 230){
+                resultado.innerText= 'La altura no puede ser mayor a 230cm'
+                resultado.style.color= 'red'
+            }else if (correo === ''){
+                resultado.innerText= 'El correo esta vacio'
+                resultado.style.color= 'red'
+            }else if (!correo.includes('@')){
+                resultado.innerText= 'El correo debe incluir un @'
+                resultado.style.color= 'red'
+            }else{
+                resultado.innerText= 'Todos los datos son validos'
+                resultado.style.color= 'green'
+            }
+            e.preventDefault()
+        }
+
+        function $(elemento){
+            return document.getElementById(elemento)
+        }
+    </script>
+</body>
+
+</html>

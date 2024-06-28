@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej5</title>
+</head>
+
+<body>
+    <form id="formulario">
+        <label for="ladoA">Lado A</label>
+        <input type="number" id="ladoA" name="ladoA" step="any" placeholder="Ingrese la medida en metros"><br>
+        <label for="ladoB">Lado B</label> 
+        <input type="number" id="ladoB" name="ladoB" step="any" placeholder="Ingrese la medida en metros"><br>
+        <label for="ladoC">Lado C</label>
+        <input type="number" id="ladoC" name="ladoC" step="any" placeholder="Ingrese la medida en metros"><br>
+        <button onclick='calcular()'>Calcular</button>
+    </form>
+    <h1 id="resultado">El area es:</h1>
+
+    <script>
+        const formulario = $('formulario')
+        const resultado = $('resultado')
+
+        formulario.onsubmit = (e)=>{
+            let ladoA= +formulario['ladoA'].value
+            let ladoB= +formulario['ladoB'].value
+            let ladoC= +formulario['ladoC'].value
+
+            if(ladoA>ladoC){
+                let triangulo = (ladoB * (ladoA-ladoC))/2
+                let rectangulo = (ladoB * ladoC)
+
+                let area = rectangulo + triangulo
+                resultado.innerText = "El area es: " + area
+            } else{
+                alert("El lado B debe ser menor al lado A")
+            }
+            e.preventDefault()
+        }
+
+        function $(elemento){
+            return document.getElementById(elemento)
+        }
+    </script>
+</body>
+
+</html>
