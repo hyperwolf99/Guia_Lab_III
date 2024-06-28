@@ -19,11 +19,11 @@ function Ej8() {
         }
     }
 
-    const handleQuitarPorPersona = (persona) => {
-        if (confirm(`¿Desea quitar ${persona}?`)) {
-            setPersonas(personas.filter((p) => p !== persona));
-        }
-    };
+    // const handleQuitarPorPersona = (persona) => {
+    //     if (confirm(`¿Desea quitar ${persona}?`)) {
+    //         setPersonas(personas.filter((p) => p !== persona));
+    //     }
+    // };
 
     return (
         <form id="formulario" onSubmit={(e) => (e.preventDefault())}>

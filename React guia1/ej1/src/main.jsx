@@ -10,6 +10,10 @@ import Ej8 from './ArregloPersonas+.jsx'
 import Ej9 from './ObjetoPersonas.jsx'
 import Ej10 from './ObjetoPersonas+.jsx'
 import './style.css'
+import TpEj1 from './Izq, Centro, Der.jsx'
+import TpEj2 from './Calculo IMC.jsx'
+import TpEj3 from './Flexbox.jsx'
+import TpEj4 from './Validaciones.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -22,5 +26,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Ej8 />
     <Ej9 />
     <Ej10 />
+    <TpEj1 />
+    <TpEj2 />
+    <TpEj3 />
+    <TpEj4 />
   </React.StrictMode>,
 )
