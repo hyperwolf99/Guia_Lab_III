@@ -14,6 +14,11 @@ import TpEj1 from './Izq, Centro, Der.jsx'
 import TpEj2 from './Calculo IMC.jsx'
 import TpEj3 from './Flexbox.jsx'
 import TpEj4 from './Validaciones.jsx'
+import Ej1Parcial from './Ej1 React.jsx'
+import Ej2Parcial from './Ej2 React.jsx'
+import App from './Edad Salinas.jsx'
+import App2 from './Contraseña Salinas.jsx'
+import Productos from './Productos.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -30,5 +35,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <TpEj2 />
     <TpEj3 />
     <TpEj4 />
+    <Ej1Parcial />
+    <Ej2Parcial />
+    <App />
+    <App2 />
+    <Productos />
   </React.StrictMode>,
 )
